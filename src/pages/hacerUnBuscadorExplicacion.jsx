@@ -24,4 +24,18 @@ value={buscador.get('nombre')}
 todo esto en value:
 value={buscador.get('nombre') ? buscador.get('nombre') : ''}
 * ya estarian conectados los parametros de busqueda con lo que escribe el usuario en el input
+
+* ahora yo quiero filtar los personaje, peliculas, series o lo que sea.
+entonces en este caso antes de mapear los personajes los voy a filtrar:
+{personajes.filter((item)=>{
+        let filter = searchParams.get('keyword') // lo que escribe el usuario
+        let name = item.name.toLowerCase()
+
+        if(!filter){
+          return true
+        }else{
+          return name.startsWith(filter.toLowerCase())
+        }
+      })
+
 */
